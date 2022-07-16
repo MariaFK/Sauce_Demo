@@ -1,5 +1,6 @@
 package test;
 
+import constants.Urls;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +22,7 @@ public class BaseTest {
         propertyManager.loadData();
         System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_DRIVER"));
         driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/");
+        driver.get(Urls.LOGIN_FORM_URL);
         driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(new CharSequence[]{"standard_user"});
         driver.findElement(By.cssSelector("#password")).sendKeys(new CharSequence[]{"secret_sauce"});
         driver.findElement(By.className("submit-button")).click();
