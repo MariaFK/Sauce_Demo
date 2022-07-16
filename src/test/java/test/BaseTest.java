@@ -23,18 +23,14 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_DRIVER"));
         driver = new ChromeDriver();
         driver.get(Urls.LOGIN_FORM_URL);
-        driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(new CharSequence[]{"standard_user"});
-        driver.findElement(By.cssSelector("#password")).sendKeys(new CharSequence[]{"secret_sauce"});
+        driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(USERNAME);
+        driver.findElement(By.cssSelector("#password")).sendKeys(PASSWORD);
         driver.findElement(By.className("submit-button")).click();
         driver.findElement(By.cssSelector("[name='add-to-cart-sauce-labs-backpack']")).click();
         driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
     }
-
-    @AfterMethod(
-            alwaysRun = true
-    )
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
-
         driver.quit();
     }
 

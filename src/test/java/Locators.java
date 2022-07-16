@@ -5,14 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class Locators {
+    public final String USERNAME = "standard_user";
+    public final String PASSWORD = "secret_sauce";
     @Test
     public void findElements() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("user-name")).sendKeys(USERNAME);
+        driver.findElement(By.id("password")).sendKeys(PASSWORD);
 
         //find by className
         WebElement loginButton = driver.findElement(By.className("submit-button"));
