@@ -5,8 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class Locators {
+
     public final String USERNAME = "standard_user";
     public final String PASSWORD = "secret_sauce";
+
     @Test
     public void findElements() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
