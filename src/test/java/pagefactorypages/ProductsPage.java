@@ -21,20 +21,29 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
 
-    public void clickAddItemToCartButton() {
+    @Override
+    public boolean isOpenedPage() {
+        return addItemToCartButton.isDisplayed();
+    }
+
+    public ProductsPage clickAddItemToCartButton() {
         addItemToCartButton.click();
+        return this;
     }
 
-    public void clickShoppingCartButton() {
+    public ShoppingCartPage clickShoppingCartButton() {
         shoppingCartButton.click();
+        return new ShoppingCartPage(driver);
     }
 
-    public void clickLinkedInIcon() {
+    public LinkedInPage clickLinkedInIcon() {
         linkedInIcon.click();
+        return new LinkedInPage(driver);
     }
 
-    public void switchToNextTab() {
+    public LinkedInPage switchToNextTab() {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
+        return new LinkedInPage(driver);
     }
 }
