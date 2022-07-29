@@ -12,8 +12,16 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(css = "[class='inventory_item_price']")
     private WebElement itemPrice;
 
+    @FindBy(id = "continue-shopping")
+    private WebElement continueShoppingButton;
+
     public ShoppingCartPage(WebDriver driver) {
         super(driver);
+    }
+
+    @Override
+    public boolean isOpenedPage() {
+        return continueShoppingButton.isDisplayed();
     }
 
     public String itemName() {

@@ -1,14 +1,14 @@
 package test;
 
-import org.openqa.selenium.By;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pagefactorypages.LoginPage;
 import pagefactorypages.ProductsPage;
 import pagefactorypages.ShoppingCartPage;
-import test.BaseTest;
 
-public class SauceDemoFactoryTest extends BaseTest {
+
+public class SauceDemoFactoryTest extends BaseFactoryTest {
 
     @Test
     public void CartTest() {

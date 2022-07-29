@@ -13,6 +13,11 @@ public class LinkedInPage extends BasePage {
         super(driver);
     }
 
+    @Override
+    public boolean isOpenedPage() {
+        return LinkedInLogo.isDisplayed();
+    }
+
     public boolean isLinkedInLogoDisplayed() {
         return LinkedInLogo.isDisplayed();
     }
