@@ -6,11 +6,12 @@ import org.testng.annotations.Test;
 import pagefactorypages.LoginPage;
 import pagefactorypages.ProductsPage;
 import pagefactorypages.ShoppingCartPage;
+import utils.RetryAnalyzer;
 
 
 public class SauceDemoFactoryTest extends BaseFactoryTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void CartTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();

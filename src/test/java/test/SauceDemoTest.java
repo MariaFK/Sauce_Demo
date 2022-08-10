@@ -4,10 +4,11 @@ import constants.Urls;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.RetryAnalyzer;
 
 public class SauceDemoTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void CartTest() {
         driver.get(Urls.LOGIN_FORM_URL);
         driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(USERNAME);

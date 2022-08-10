@@ -15,14 +15,12 @@ public class BaseTest {
     public final String USERNAME = "standard_user";
     public final String PASSWORD = "secret_sauce";
 
-    public BaseTest() {
-    }
 
     @BeforeMethod
     public void setUp() {
         PropertyManager propertyManager = new PropertyManager();
         propertyManager.loadData();
-        System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_DRIVER"));
+        System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_CHROME"));
         driver = new ChromeDriver();
         setImplicitlyWait();
     }
