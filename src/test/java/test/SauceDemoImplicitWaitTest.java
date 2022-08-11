@@ -10,9 +10,10 @@ import org.testng.annotations.Test;
 import pagefactorypages.LinkedInPage;
 import pagefactorypages.LoginPage;
 import pagefactorypages.ProductsPage;
+import utils.RetryAnalyzer;
 
 public class SauceDemoImplicitWaitTest extends BaseTest {
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void clickLinkedInIconTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();

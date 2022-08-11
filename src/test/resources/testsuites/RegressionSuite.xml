@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce Demo Test" thread-count = "2" parallel="classes">
+    <test name="LinkedInTest">
+        <classes>
+            <class name="test.SauceDemoImplicitWaitTest"></class>
+        </classes>
+    </test>
+    <test name="CartTests">
+        <classes>
+            <class name="test.SauceDemoTest"></class>
+            <class name="test.SauceDemoFactoryTest"></class>
+            <parameter name="browser" value="chrome"></parameter>
+        </classes>
+    </test>
+</suite>
